@@ -19,12 +19,12 @@ rimraf('./react/outline/*')
   })
   .then(() => {
     return Promise.all([
-      fs.readdir('./solid').then((files) => {
+      fs.readdir('./optimized/solid').then((files) => {
         return Promise.all(
           files.map((file) => {
             const componentName = `${camelcase(file.replace(/\.svg$/, ''), { pascalCase: true })}`
             return fs
-              .readFile(`./solid/${file}`, 'utf8')
+              .readFile(`./optimized/solid/${file}`, 'utf8')
               .then((content) => {
                 return svgToReact(content, `${componentName}Icon`)
               })
@@ -48,12 +48,12 @@ rimraf('./react/outline/*')
         })
       }),
 
-      fs.readdir('./outline').then((files) => {
+      fs.readdir('./optimized/outline').then((files) => {
         return Promise.all(
           files.map((file) => {
             const componentName = `${camelcase(file.replace(/\.svg$/, ''), { pascalCase: true })}`
             return fs
-              .readFile(`./outline/${file}`, 'utf8')
+              .readFile(`./optimized/outline/${file}`, 'utf8')
               .then((content) => {
                 return svgToReact(content, `${componentName}Icon`)
               })

@@ -36,3 +36,11 @@ To use these icons, simply copy the source for the icon you need from [heroicons
 Both icon styles are preconfigured to be stylable by setting the `color` CSS property, either manually or using utility classes like `text-gray-500` in a framework like [Tailwind CSS](https://tailwindcss.com).
 
 We also publish the icons to npm as `heroicons`, but we don't consider the directory structure stable yet and it could change in any release, so use the npm package at your own risk right now.
+
+#### To generate React JSX
+From within `./`, run:
+1. `mkdir -p react/solid`
+1. `mkdir -p react/outline`
+1. `node scripts/build-react.js`
+
+That will put all the JSX files in the `react/` directory which you can then copy into your project.
